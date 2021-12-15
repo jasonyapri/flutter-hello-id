@@ -4,7 +4,16 @@ void main() => runApp(MaterialApp(
   home:HelloCard(),
 ));
 
-class HelloCard extends StatelessWidget {
+class HelloCard extends StatefulWidget {
+
+  @override
+  _HelloCardState createState() => _HelloCardState();
+}
+
+class _HelloCardState extends State<HelloCard> {
+
+  // Last Education (0: None 1: SD | 2: SMP | 3: SMA | 4: Bachelor's Degree | 5: Master's Degree )
+  int lastEducation = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +24,15 @@ class HelloCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            lastEducation++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800]
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -41,7 +59,7 @@ class HelloCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             Text(
-              'Jason-Yapri',
+              'Jason Yapri',
               style: TextStyle(
                 color: Colors.amberAccent,
                 letterSpacing: 2.0,
@@ -59,7 +77,7 @@ class HelloCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             Text(
-              'Master Degree',
+              '$lastEducation',
               style: TextStyle(
                 color: Colors.amberAccent,
                 letterSpacing: 2.0,
@@ -91,3 +109,4 @@ class HelloCard extends StatelessWidget {
     );
   }
 }
+
