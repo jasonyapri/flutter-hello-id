@@ -81,13 +81,13 @@ class _HelloCardState extends State<HelloCard> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            lastEducation++;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.grey[800]
+          onPressed: () {
+            setState(() {
+              lastEducation++;
+            });
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.grey[800]
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -149,12 +149,12 @@ class _HelloCardState extends State<HelloCard> {
                 ),
                 SizedBox(width: 10.0),
                 Text(
-                  'hello@jasonyapri.com',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
-                  )
+                    'hello@jasonyapri.com',
+                    style: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
+                    )
                 ),
               ],
             )
@@ -164,4 +164,3 @@ class _HelloCardState extends State<HelloCard> {
     );
   }
 }
-
